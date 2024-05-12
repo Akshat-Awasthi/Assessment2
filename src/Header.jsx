@@ -6,6 +6,7 @@ import { IoInformationCircleOutline } from "react-icons/io5";
 import { PiHeadsetBold } from "react-icons/pi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
+
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -14,14 +15,14 @@ const Header = () => {
     };
 
     return (
-        <div className='flex bg-white'>
-            <div className='flex flex-col md:flex-row md:h-16  bg-[#D6D6D6] p-4 ml-24 md:ml-52 mt-2 mb-2 rounded-[25px] w-4/6 justify-between '>
+        <div className='flex bg-white justify-center'>
+            <div className='flex flex-col  md:flex-row md:h-16  bg-[#D6D6D6] p-4  mt-2 mb-2 rounded-[25px] w-4/6 justify-between '>
                 <div className='flex flex-row'>
                     <div className='mt-1 ml-3 flex-1'><h2 className='font-bold'>Createnary</h2></div>
-                    <div className='mt-1 mr-3' onClick={OpenMenu}><IoMdMenu size={25} /></div>
+                    <div className='mt-1 mr-3 ml-4 display-div hide-div ' onClick={OpenMenu}><IoMdMenu size={25} /></div>
                 </div>
                 
-                <div className='pb-5 mt-5'>
+                <div className='pb-5 mt-5 md:mt-0'>
                     <input
                         type="text"
                         placeholder="Search Creators"
@@ -29,12 +30,15 @@ const Header = () => {
                     />
                     <IoSearch className="absolute top-[84px] md:top-9 ml-3"/>
                 </div>
-                <div className={`md:flex md:flex-row md:space-x-7 md:mt-2 md:text-sm md:font-light ${menuOpen ? '' : 'hidden'}`}>
-                    <div className='flex flex-row space-x-2'><CiShoppingCart size={17} style={{ fontWeight:'10px' }}/><h3>Cart</h3></div>
-                    <div className='flex flex-row space-x-2'><IoInformationCircleOutline size={17} style={{ marginTop: '2px' }}/><h3>About</h3></div>
-                    <div className='flex flex-row space-x-2'><PiHeadsetBold style={{ marginTop: '2px' }}/><h3>Contact</h3></div>
+                <div className='hidden-div'>
+                    <div className={` md:flex md:flex-row md:space-x-7 md:mt-2 md:text-sm md:font-light ${menuOpen ? '' : 'hidden'}`}>
+                        <div className='flex flex-row space-x-2'><CiShoppingCart size={17} style={{ fontWeight:'10px' }}/><h3>Cart</h3></div>
+                        <div className='flex flex-row space-x-2'><IoInformationCircleOutline size={17} style={{ marginTop: '2px' }}/><h3>About</h3></div>
+                        <div className='flex flex-row space-x-2'><PiHeadsetBold style={{ marginTop: '2px' }}/><h3>Contact</h3></div>
+                    </div>
                 </div>
-                <div className={`md:mb-1 md:mr-12 ${menuOpen ? '' : 'hidden'}`}>
+                
+                <div className={`hidden-div md:mb-1 md:mr-12`}>
                     <select
                         name="Select"
                         id="auth"
